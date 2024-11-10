@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<htm>
+    <head>
+        <title>
+            Res365 Laundry
+        </title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <body>
+        <header>
+        <h1>Res365 Laundry</h1>
+        <img src="res365demo.png" class="logo">
+        <nav>
+            <ul>
+                <li><a href="Home.html"><img src="hom.png" class="nav-button">
+                    Home
+                </a></li>
+                <li><a href="Schedule.html"><img  src="appon.png" class="nav-button">
+                    Appoinment</a></li>
+                <li><a href="user.html"><img src="Login.png" class="nav-button"> Login</a></li>
+            </ul>
+        </nav>
+        </header>
+        <br>
+        <br><br>
+        <div>
+            <h2>Schedule a machine</h2>
+            <p>Name: <input type="text" name="name" required></p>
+            <p>Floor: 
+                <select name="Floor" required>
+                    <option value="" disabled selected>Select a machine type</option>
+                    <option value="1st Floor">1st Floor</option>
+                    <option value="3rd Floor">3rd Floor</option>
+                    <option value="5th Floor">5th Floor</option>
+                </select>
+            </p>   
+            <p>Type of machine: 
+                <select name="machine" required>
+                    <option value="" disabled selected>Select a machine type</option>
+                    <option value="Dryer">Dryer</option>
+                    <option value="Washing machine">Washing machine</option>
+                </select>
+            </p>
+             <p><input type="submit" value="Send"></p>
+             <p>Date of service: 
+                <input type="date" name="service_date" required>
+            </p>
+        </div>
+        <div></div>
+        <div></div>
+    </body>
+
+</html>
