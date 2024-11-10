@@ -1,55 +1,55 @@
 <!DOCTYPE html>
-<htm>
+<html lang="en">
     <head>
-        <title>
-            Res365 Laundry
-        </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Res365 Laundry</title>
         <link rel="stylesheet" href="Style.css">
+        <script type="module" src="main.js"></script>
     </head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <body>
         <header>
-        <h1>Res365 Laundry</h1>
-        <img src="res365demo.png" class="logo">
-        <nav>
-            <ul>
-                <li><a href="Home.html"><img src="hom.png" class="nav-button">
-                    Home
-                </a></li>
-                <li><a href="Schedule.html"><img  src="appon.png" class="nav-button">
-                    Appoinment</a></li>
-                <li><a href="user.html"><img src="Login.png" class="nav-button"> Login</a></li>
-            </ul>
-        </nav>
+            <h1>Res365 Laundry</h1>
+            <img src="res365demo.png" class="logo" alt="Logo">
+            <nav>
+                <ul>
+                    <li><a href="Home.html"><img src="hom.png" class="nav-button" alt="Home"> Home</a></li>
+                    <li><a href="Schedule.html"><img src="appon.png" class="nav-button" alt="Appointment"> Appointment</a></li>
+                </ul>
+            </nav>
         </header>
-        <br>
-        <br><br>
+
+        <br><br><br>
+
         <div>
             <h2>Schedule a machine</h2>
-            <p>Name: <input type="text" name="name" required></p>
-            <p>Floor: 
-                <select name="Floor" required>
-                    <option value="" disabled selected>Select a machine type</option>
-                    <option value="1st Floor">1st Floor</option>
-                    <option value="3rd Floor">3rd Floor</option>
-                    <option value="5th Floor">5th Floor</option>
-                </select>
-            </p>   
-            <p>Type of machine: 
-                <select name="machine" required>
-                    <option value="" disabled selected>Select a machine type</option>
-                    <option value="Dryer">Dryer</option>
-                    <option value="Washing machine">Washing machine</option>
-                </select>
-            </p>
-             <p><input type="submit" value="Send"></p>
-             <p>Date of service: 
-                <input type="date" name="service_date" required>
-            </p>
+            <form id="scheduleForm">
+                <p>Name: <input type="text" name="name" id="name" required></p>
+                <p>Surname: <input type="text" name="surname" id="surname" required></p>
+                <p>Floor: 
+                    <select name="Floor" id="floor" required>
+                        <option value="" disabled selected>Select a floor</option>
+                        <option value="1st Floor">1st Floor</option>
+                        <option value="3rd Floor">3rd Floor</option>
+                        <option value="5th Floor">5th Floor</option>
+                    </select>
+                </p>   
+                <p>Type of machine: 
+                    <select name="machine" id="machine" required>
+                        <option value="" disabled selected>Select a machine type</option>
+                        <option value="Dryer">Dryer</option>
+                        <option value="Washing machine">Washing machine</option>
+                    </select>
+                </p>
+                <p>Date of service: 
+                    <input type="date" name="service_date" id="service_date" required>
+                </p>
+                <p>Time available:
+                    <select name="time" id="time" required>
+                    </select>
+                </p>
+                <p><button type="submit" id="sendBtn">Send</button></p>
+            </form>
         </div>
-        <div></div>
-        <div></div>
     </body>
-
 </html>
