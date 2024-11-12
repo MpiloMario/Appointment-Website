@@ -5,19 +5,13 @@ body{
     padding: 0;
     height: 100%;
 }
-h1{
-    color: lawngreen;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-}
 p{
     color:antiquewhite;
     font-size: 25px;
 }
 ul{
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
 }
 div{
     color: antiquewhite;
@@ -30,6 +24,7 @@ header{
     background: rgb(255, 40, 165);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     display: flex;
+    flex-direction: row;
     font-size: x-large;
     justify-content: space-between;
     align-items: center;
