@@ -171,7 +171,7 @@ login.addEventListener("click", async ()=>{
                     window.sessionStorage.setItem("surname", currentUser.surname);
                     window.sessionStorage.setItem("room", currentUser.room);
                     
-                    setTimeout(()=>window.location.href = "Appointment-Website/Schedule.html", 2000);
+                    setTimeout(()=>window.location.href = "https://mpilomario.github.io/Appointment-Website/Schedule.html", 2000);
                     
                 }else{
                     alert("Wrong password. Try again!");
