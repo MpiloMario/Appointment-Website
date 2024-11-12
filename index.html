@@ -1,34 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Res 365</title>
-    <style>
-        body{
-            margin:0;
-            padding:0;
-            background-color: #110011;
-            color: #ff6611;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-        }
-        h1{
-            padding:10vw;
-            text-shadow: #121212 1vw 1vw;
-        }
-            
-    </style>
-</head>
-<body>
+<htm>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Res365 Laundry</title>
+        <link rel="stylesheet" href="/Res website/Style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1-crypto-js.js"></script>
+        <script type="module" src="/Res website/user.js"></script>
+    </head>
     
-    <h1>Please be it</h1>
-    <p>
-        What if it is because the index page is inside a directory, rather than the root directory?
-    </p>
-    <p>
-        If thats the case, then let <a href="./Res website/index.html">this</a> be the way to the actual index page of the website. Will fix at a later stage.
-    </p>
-</body>
+    <body>
+        <header>
+        <img src="/Res website/res365demo.png" class="logo">
+        <h1>Res365 Laundry</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="Res website/hom.png" class="nav-button">
+                    Home
+                </a></li>
+                <li><a href="Schedule.html"><img  src="/Res website/appon.png" class="nav-button">
+                    Appoinment</a></li>
+                <li><a href="user.html"><img src="/Res website/Login.png" class="nav-button"> Login</a></li>
+            </ul>
+        </nav>
+        </header>
+        <br>
+        <h2 id="currentUserOption">Login</h2>
+        <div id="userInput">
+            <p>Email:</p>
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+
+            <p>Password:</p>
+            <input type="password" name="password" id="password" placeholder="Enter your password">
+            <br>
+            <input type="button" value="Log in" id="loginBtn">
+
+            <div>
+                Don't have an account? <button id="registerBtn" style="background-color: transparent; color: bisque; border: 0; text-decoration: underline;">Register</button>
+            </div>
+        </div>
+    </body>
+
 </html>
