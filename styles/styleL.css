@@ -1,0 +1,150 @@
+
+body {
+    margin: 0;
+    background-image: url(/assets/login.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    color: oldlace;
+    font-size: 24px;
+}
+div{
+    color: antiquewhite;
+    font-style: oblique;
+}
+a {
+    outline: none; 
+    text-decoration: none; 
+}
+
+a:focus {
+    outline: none;
+}
+
+header {
+    justify-content: space-between;
+    display: flex; 
+    align-items: center; 
+    padding: 10px 20px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+img {
+    height: 50px; 
+    width: auto;
+}
+
+h1 {
+    font-size:65px;
+    color: orangered;
+    font-family:'Courier', 'Times New Roman', 'Cambria';
+    margin: 0; 
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li{
+    margin: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+nav ul li img{
+    height: 40px;
+    width: auto;
+}
+nav ul li span {
+    margin-top: 5px; 
+    font-size: 14px; 
+    color: orangered; 
+    font-family:'Courier', 'Times New Roman', 'Cambria';
+}
+.content {
+    height: calc(100vh - 70px); 
+    padding: 20px;
+}
+        /* Login Container */
+        #userInput {
+            background: #2a2a2a; /* Slightly lighter background for contrast */
+            padding: 2rem 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Headings */
+        #currentUserOption {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color:orangered; /* Accent color */
+        }
+
+        /* Form Elements */
+        #userInput p {
+            text-align: left;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: orangered;
+            outline: none;
+            box-shadow: 0 0 5px orangered;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            padding: 0.7rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            background: orangered;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        input[type="button"]:hover {
+            background: orangered;
+        }
+
+        /* Register Section */
+        #userInput div {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        #registerBtn {
+            background-color: transparent;
+            color: orangered;
+            border: 0;
+            text-decoration: underline;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #registerBtn:hover {
+            color: orangered;
+        }
