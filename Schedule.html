@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Res365 Laundry</title>
+        <link rel="stylesheet" href="styles/styleS.css">
+        <script type="module" src="script/main.js"></script>
+    </head>
+    <body>
+        <header>
+            <img src="/assets/res365demo.png" alt="Logo">
+            <h1>Res365 Laundry</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><img src="assets/icons8-home-64.png">
+                    <span>Home</span></a></li>
+                    <li><a href="Schedule.html"><img src="assets/icons8-appointment-time-64.png"><span>Appointment</span></a></li>
+                    <li><a href="user.html"><img src="assets/icons8-login-64.png"><span>Login</span></a></li>
+                    <li><a href="history.html"><img src="assets/icons8-history-64.png"><span>history</span></a></li>
+                </ul>
+            </nav>
+        </header>
+        <br><br><br>
+
+        <div>
+            <h2>Schedule a machine</h2>
+            <form id="scheduleForm">
+                <p>Floor: 
+                    <select name="Floor" id="floor" required>
+                        <option value="" disabled selected>Select a floor</option>
+                        <option value="1st Floor">1st Floor</option>
+                        <option value="3rd Floor">3rd Floor</option>
+                        <option value="5th Floor">5th Floor</option>
+                    </select>
+                </p>   
+                <p>Type of machine: 
+                    <select name="machine" id="machine" required>
+                        <option value="" disabled selected>Select a machine type</option>
+                        <option value="Dryer">Dryer</option>
+                        <option value="Washing machine">Washing machine</option>
+                    </select>
+                </p>
+                <p>Date of service: 
+                    <input type="date" name="service_date" id="service_date" required>
+                </p>
+                <div id="availableTime" style="display: none;">
+                    <p>Time available:
+                        <select name="time" id="time" required>
+                        </select>
+                    </p>
+                </div>
+                
+                <p><button type="submit" id="reqBtn" style="display: block;">RequestDate</button></p>
+                <p><button type="submit" id="sendBtn" style="display: none;">Submit</button></p>
+
+            </form>
+        </div>
+    </body>
+</html>
