@@ -66,5 +66,31 @@ nav ul li span {
 }
 .content {
     height: calc(100vh - 70px); 
+    
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #ccc;
+}
     padding: 20px;
 }
