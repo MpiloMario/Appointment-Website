@@ -41,6 +41,12 @@ h1 {
     font-family:'Courier', 'Times New Roman', 'Cambria';
     margin: 0; 
 }
+h2{
+    font-size:48px;
+    color: orangered;
+    font-family:'Courier', 'Times New Roman', 'Cambria';
+    margin: 0; 
+}
 nav ul{
     display: flex;
     list-style: none;
