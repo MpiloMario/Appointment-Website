@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Appointment Records</title>
+    <link rel="stylesheet" href="styles/styleH.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: orangered;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        .appointment-card {
+            background: black;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .appointment-info {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAx6CFN7bzU6aMFqgMIpux2GkFr5ii2png",
+            authDomain: "machine-scheduler-55dd0.firebaseapp.com",
+            projectId: "machine-scheduler-55dd0",
+            storageBucket: "machine-scheduler-55dd0.firebasestorage.app",
+            messagingSenderId: "612198258545",
+            appId: "1:612198258545:web:46912412ef85687a4088d0",
+            measurementId: "G-ZDH2B13TQ1"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function fetchAppointments() {
+            const querySnapshot = await getDocs(collection(db, "records"));
+            const appointmentList = document.getElementById("appointmentList");
+            appointmentList.innerHTML = "";
+
+            querySnapshot.forEach((doc) => {
+                const appData = doc.data();
+                const card = document.createElement("div");
+                card.classList.add("appointment-card");
+
+                card.innerHTML = `
+                    <div class="appointment-info">
+                        <h3>${appData.machine}</h3>
+                        <p>Customer: ${appData.name} ${appData.surname}</p>
+                        <p>Floor: ${appData.floor}</p>
+                        <p>Date: ${appData.serviceDate}</p>
+                        <p>Time: ${appData.time}</p>
+                    </div>
+                `;
+
+                appointmentList.appendChild(card);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchAppointments);
+    </script>
+</head>
+<body>
+  <header>
+    <img src="/assets/res365demo.png" alt="Logo">
+    <h1>Res365 Laundry</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html"><img src="assets/icons8-home-64.png">
+            <span>Home</span></a></li>
+            <li><a href="Schedule.html"><img src="assets/icons8-appointment-time-64.png"><span>Appointment</span></a></li>
+           <li><a href="booked.html"><img src="assets/icons8-appointment-time-64.png"><span>booked</span></a></li>
+           
+            <li><a href="history.html"><img src="assets/icons8-history-64.png"><span>history</span></a></li>
+        </ul>
+    </nav>
+</header>
+    <div class="container">
+        <h2>Appointment Records</h2>
+        <div id="appointmentList"></div>
+    </div>
+</body>
+</html>
