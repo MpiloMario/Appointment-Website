@@ -11,7 +11,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-          
         }
         .container {
             max-width: 800px;
@@ -19,6 +18,7 @@
         }
         .appointment-card {
             background: black;
+            color: white;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -34,7 +34,7 @@
     </style>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+        import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyAx6CFN7bzU6aMFqgMIpux2GkFr5ii2png",
@@ -50,7 +50,8 @@
         const db = getFirestore(app);
 
         async function fetchAppointments() {
-            const querySnapshot = await getDocs(collection(db, "records"));
+            const q = query(collection(db, "records"), orderBy("serviceDate", "desc")); // Latest date first
+            const querySnapshot = await getDocs(q);
             const appointmentList = document.getElementById("appointmentList");
             appointmentList.innerHTML = "";
 
@@ -62,10 +63,10 @@
                 card.innerHTML = `
                     <div class="appointment-info">
                         <h3>${appData.machine}</h3>
-                        <p>Customer: ${appData.name} ${appData.surname}</p>
-                        <p>Floor: ${appData.floor}</p>
-                        <p>Date: ${appData.serviceDate}</p>
-                        <p>Time: ${appData.time}</p>
+                        <p><strong>Customer:</strong> ${appData.name} ${appData.surname}</p>
+                        <p><strong>Floor:</strong> ${appData.floor}</p>
+                        <p><strong>Date:</strong> ${appData.serviceDate}</p>
+                        <p><strong>Time:</strong> ${appData.time}</p>
                     </div>
                 `;
 
@@ -77,20 +78,19 @@
     </script>
 </head>
 <body>
-  <header>
-    <img src="/assets/res365demo.png" alt="Logo">
-    <h1>Res365 Laundry</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html"><img src="assets/icons8-home-64.png">
-            <span>Home</span></a></li>
-            <li><a href="Schedule.html"><img src="assets/icons8-appointment-time-64.png"><span>Appointment</span></a></li>
-           <li><a href="booked.html"><img src="assets/icons8-appointment-time-64.png"><span>booked</span></a></li>
-           
-            <li><a href="history.html"><img src="assets/icons8-history-64.png"><span>history</span></a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <img src="/assets/res365demo.png" alt="Logo">
+        <h1>Res365 Laundry</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="assets/icons8-home-64.png"><span>Home</span></a></li>
+                <li><a href="Schedule.html"><img src="assets/icons8-appointment-time-64.png"><span>Appointment</span></a></li>
+                <li><a href="booked.html"><img src="assets/icons8-appointment-time-64.png"><span>Booked</span></a></li>
+                <li><a href="history.html"><img src="assets/icons8-history-64.png"><span>History</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
         <h2>Appointment Records</h2>
         <div id="appointmentList"></div>
