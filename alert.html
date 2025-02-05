@@ -3,7 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Alert Example</title>
+    <title>Alert</title>
+     <script>
+        // Function to show the modal with a message
+        function showModal(message) {
+            document.getElementById("modalMessage").textContent = message; // Set the message
+            document.getElementById("customAlert").style.display = "flex"; // Show the modal
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById("customAlert").style.display = "none"; // Hide the modal
+        }
+
+        // Example Usage
+        showModal("Please log in to access this page.");
+    </script>
     <style>
         /* Modal Background */
         .modal-overlay {
@@ -59,21 +74,5 @@
             <button onclick="closeModal()">OK</button>
         </div>
     </div>
-
-    <script>
-        // Function to show the modal with a message
-        function showModal(message) {
-            document.getElementById("modalMessage").textContent = message; // Set the message
-            document.getElementById("customAlert").style.display = "flex"; // Show the modal
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            document.getElementById("customAlert").style.display = "none"; // Hide the modal
-        }
-
-        // Example Usage
-        showModal("Please log in to access this page.");
-    </script>
 </body>
 </html>
