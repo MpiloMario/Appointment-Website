@@ -1,7 +1,9 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // Check if user is logged in (assuming a token is stored in localStorage)
+    const userToken = localStorage.getItem("userToken"); 
 
-document.addEventListener("DOMContentLoaded", function () {
-    if (!sessionStorage.getItem("name")) {
-        alert("Please log in to access this page.");
+    if (!userToken) {
+        // If no token found, redirect to login page
         window.location.href = "user.html";
     }
 });
