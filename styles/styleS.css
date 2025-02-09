@@ -23,7 +23,7 @@ main {
     justify-content: center;
     align-items: center;
     height: calc(100vh - 70px);
-    padding: 20px;
+    padding: 8px;
 }
 
 a:focus {
