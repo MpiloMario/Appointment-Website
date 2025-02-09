@@ -18,6 +18,13 @@ a {
     outline: none; 
     text-decoration: none; 
 }
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+    padding: 20px;
+}
 
 a:focus {
     outline: none;
