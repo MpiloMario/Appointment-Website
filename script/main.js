@@ -104,11 +104,22 @@ async function getMachines() {
 }
 
 async function addData(data) {
-    try {
-        const docRef = await addDoc(recordsCollectionRef, data);
-        alert("Document written with ID: " + docRef.id);
+ try {
+        await addDoc(recordsCollectionRef, data);
+        
+        // Show confirmation message
+        const confirmationDiv = document.getElementById("confirmationMessage");
+        confirmationDiv.style.display = "block";
+
+        // Hide the form (optional)
+        document.getElementById("scheduleForm").reset();
+
+        // Optionally hide message after a few seconds
+        setTimeout(() => {
+            confirmationDiv.style.display = "none";
+        }, 3000);
     } catch (error) {
-        alert("Error adding document: " + error);
+        alert("Oops! Something went wrong. Please try again later. ❌");
     }
 }
 
