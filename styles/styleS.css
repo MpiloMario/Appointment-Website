@@ -27,13 +27,16 @@ main {
 a:focus {
     outline: none;
 }
-
 header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     justify-content: center;
-    display: flex; 
-    align-items: center; 
-    padding: 10px 20px; 
-    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 img {
@@ -46,6 +49,7 @@ h1 {
     color: orangered;
     font-family:'Courier', 'Times New Roman', 'Cambria';
     margin: 0; 
+    padding: 0;
 }
 nav ul{
     display: flex;
@@ -81,10 +85,11 @@ nav ul li span {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     max-width: 400px;
     width: 100%;
+    margin-top: 20px;
 }
 
 h2 {
-    margin-top: 0;
+    margin-top: 100px;
     color: orangered;
     font-family: 'Courier', 'Times New Roman', 'Cambria';
     text-align: center;
