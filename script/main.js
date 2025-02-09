@@ -163,17 +163,4 @@ sendBtn.addEventListener("click", (event) => {
     }
     
 });
-  const scheduleForm = document.getElementById("scheduleForm");
-  const confirmationMessage = document.getElementById("confirmation");
 
-  scheduleForm.addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent actual form submission
-
-      // Show the confirmation message with animation
-      confirmationMessage.classList.add("show");
-
-      // Optionally, hide the message after a few seconds
-      setTimeout(() => {
-          confirmationMessage.classList.remove("show");
-      }, 3000);
-  });
