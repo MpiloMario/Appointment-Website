@@ -177,4 +177,3 @@ sendBtn.addEventListener("click", (event) => {
           confirmationMessage.classList.remove("show");
       }, 3000);
   });
-});
